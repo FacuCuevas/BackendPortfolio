@@ -1,4 +1,3 @@
-
 package com.port.facu.Security.Repository;
 
 import com.port.facu.Security.Entity.Usuario;
@@ -8,9 +7,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface iUsuarioRepository extends JpaRepository<Usuario, Integer> {
+
     Optional<Usuario> findByNombreUsuario(String nombreUsuario);
 
-boolean existByNombreUsuario(String nombreUsuario);
-boolean existByEmail(String email);
+    boolean existsByNombreUsuario(String nombreUsuario);
+
+    boolean existsByEmail(String email);
 
 }
